@@ -26,7 +26,7 @@ namespace NoSpidersMod
         {
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += (Scene old, Scene @new) =>
             {
-                if (!@new.name.StartsWith("Deepnest") || @new.name == "Deepnest_30")
+                if (!@new.name.StartsWith("Deepnest"))
                 {
                     return;
                 }
