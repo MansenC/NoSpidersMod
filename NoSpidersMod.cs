@@ -19,14 +19,17 @@ namespace NoSpidersMod
 
         public override string GetVersion()
         {
-            return "1.0.0";
+            return "1.2.0";
         }
 
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += (Scene old, Scene @new) =>
             {
-                if (!@new.name.StartsWith("Deepnest"))
+                Log(@new.name);
+                if (!@new.name.StartsWith("Deepnest")
+                    && !@new.name.Equals("Room_spider_small")
+                    && !@new.name.Equals("Deepnest_Spider_Town"))
                 {
                     return;
                 }
